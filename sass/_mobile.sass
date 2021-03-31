@@ -1,0 +1,226 @@
+@media (max-width: 960px)
+   .container
+      #showcase
+         height: 100vh
+         nav.navbar
+            div.logo
+               margin-left: 7%
+               img
+                  height: 24px
+               h1
+                  font-size: 24px
+                  line-height: 30px
+            ul#desktop-menu
+               display: none
+            a#hamburger-button
+               display: block
+               position: absolute
+               top: 50%
+               right: 8%
+               transform: translate(0, -55%)
+               line-height: 100px
+               font-size: 30px
+               color: #fff
+               z-index: 1
+            div#mobile-navbar-bgc
+               position: fixed
+               top: 10px
+               right: 25px
+               width: 80px
+               height: 80px
+               border-radius: 50%
+               background-color: transparent
+               transition: 0.6s transform linear
+               &.open
+                  transform: scale(80)
+                  background: linear-gradient(90deg, rgb(213, 32, 71) 0%, rgb(238, 61, 27) 100%)
+            div#mobile-navbar
+               display: block
+               position: absolute
+               top: 0
+               left: 0
+               width: 100%
+               height: 100vh
+               opacity: 0
+               visibility: hidden
+               transition: 0.3s opacity ease-in-out
+               &.open
+                  opacity: 1
+                  visibility: visible
+               ul#mobile-menu
+                  position: absolute
+                  top: 0
+                  left: 0
+                  z-index: 2
+                  display: flex
+                  flex-direction: column
+                  justify-content: space-evenly
+                  height: 80%
+                  width: 100%
+                  margin-top: 15%
+                  list-style: none
+                  li
+                     width: 100%
+                     a
+                        display: block
+                        text-align: center
+                        font-size: 30px
+                        color: #fff
+                        text-decoration: none
+                        letter-spacing: 2px
+                        text-transform: uppercase
+         div.showcase-content
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -30%)
+            width: 90%
+            &.open
+               visibility: hidden
+            p
+               width: 75%
+               line-height: 46px
+            a
+               height: 60px
+               width: 170px
+               font-size: 18px
+               line-height: 60px
+
+@media (max-width: 960px) and (orientation: landscape)
+   .container
+      #showcase
+         nav.navbar
+            top: 0
+            div.logo
+               img
+                  height: 14px
+               h1
+                  font-size: 14px
+            div#mobile-navbar
+               ul#mobile-menu
+                  flex-direction: row
+                  flex-wrap: wrap
+                  justify-content: space-between
+                  align-items: stretch
+                  width: 90%
+                  margin-top: 12%
+                  margin-right: 5%
+                  margin-left: 5%
+                  li
+                     width: 50%
+                     height: 30px
+                     line-height: 30px
+                     a
+                        font-size: 16px
+         div.showcase-content
+            h1
+               font-size: 42px
+               line-height: 46px
+            p
+               width: 50%
+               margin: 10px auto
+               font-size: 16px
+               line-height: 26px
+            a
+               height: 30px
+               width: 90px
+               font-size: 14px
+               line-height: 30px
+
+@media (max-width: 680px)
+   .container
+      #showcase
+         nav.navbar
+            div.logo
+               width: 20%
+               img
+                  height: 14px
+               h1
+                  font-size: 14px
+                  line-height: 30px
+            div#mobile-navbar
+               ul#mobile-menu
+                  li
+                     a
+                        font-size: 25px
+         div.showcase-content
+            h1
+               font-size: 34px
+               line-height: 36px
+            p
+               width: 80%
+               font-size: 18px
+               line-height: 28px
+            a
+               height: 40px
+               width: 120px
+               font-size: 16px
+               line-height: 40px
+
+@media (max-width: 680px) and (orientation: landscape)
+   .container
+      #showcase
+         nav.navbar
+            div#mobile-navbar
+               ul#mobile-menu
+                  li
+                     a
+                        font-size: 16px
+         div.showcase-content
+            h1
+               font-size: 32px
+               line-height: 36px
+            p
+               margin: 0 auto
+               width: 58%
+               font-size: 14px
+               line-height: 24px
+            a
+               height: 30px
+               width: 90px
+               font-size: 14px
+               line-height: 30px
+
+@media (max-width: 375px)
+   .container
+      #showcase
+         nav.navbar
+            div.logo
+               h1
+                  font-size: 14px
+            div#mobile-navbar
+               ul#mobile-menu
+                  li
+                     a
+                        font-size: 20px
+         div.showcase-content
+            h1
+               font-size: 28px
+               line-height: 30px
+            p
+               font-size: 14px
+               line-height: 24px
+            a
+               width: 100px
+               font-size: 14px
+
+@media (max-width: 280px)
+   .container
+      #showcase
+         nav.navbar
+            div.logo
+            div#mobile-navbar
+               ul#mobile-menu
+                  margin-top: 20%
+         div.showcase-content
+            h1
+               font-size: 26px
+               line-height: 28px
+            p
+               width: 85%
+               font-size: 12px
+               line-height: 22px
+            a
+               height: 30px
+               width: 90px
+               font-size: 12px
+               line-height: 30px
