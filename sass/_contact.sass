@@ -1,0 +1,173 @@
+@import 'variables'
+
+section.section#contact
+   background-color: #fff
+   // background-color: grey
+   height: 500px
+   color: #000
+   div.section-content
+      width: 100%
+      height: 500px
+      padding-top: 117px
+      display: flex
+      justify-content: flex-start
+      padding-left: 176px
+      .contact-info
+         height: 305px
+         margin-right: 125px
+         width: 434px
+         // background-color: yellow
+         h2
+
+            font-weight: 600
+            font-size: 36px
+            line-height: 43px
+            margin-bottom: 53px
+            p
+               font-weight: 400
+               font-size: 14px
+               line-height: 20px
+               text-align: justify
+      .contact-form
+         position: relative
+         // background-color: pink
+         width: 540px
+         height: 305px
+         .form-box
+            position: relative
+            display: flex
+            justify-content: space-between
+            #first-name, #last-name
+               width: 255px
+         .input-placeholder
+            background-color: #fff
+            padding: 0 5px
+            font-size: 12px
+            font-weight: 600
+            height: 12px
+            width: 100px
+            color: #010101
+            position: relative
+            top: 6px
+            left: 10px
+            padding-left: 4px
+            z-index: 1
+         .input-placeholder.name
+            position: absolute
+            top: -8px
+            left: 10px
+            height: 12px
+            display: block
+            white-space: nowrap
+            text-overflow: ellipsis
+            padding: 0 5px
+            width: 68px
+         .input-placeholder.name#last-name-label
+            left: 279px
+         .hide
+            visibility: hidden
+         .input-field.error
+            border: 1px solid $primary-color
+         input:focus, button:focus
+            outline: none
+            border: 1px solid grey
+         .input-field
+            height: 60px
+            width: 100%
+            border: 1px solid rgba(51, 51, 51, 1)
+            border-radius: 6px
+            padding-left: 31px
+            margin-bottom: 24px
+         .input-field::placeholder, .dropbtn
+            color: rgba(19, 39, 67, 0.5)
+            font-size: 16px
+            line-height: 19px
+         p.textError
+            position: absolute
+            top: 65px
+            left: 10px
+            color: $primary-color
+            font-size: 12px
+            font-weight: 700
+         input#last-name+p.textError
+            left: 295px
+         input#phone+p.textError
+            top: 168px
+         .dropdown
+            position: relative
+            .dropbtn
+               background-color: #fff
+               text-align: left
+               i
+                  font-size: 14px
+                  padding-left: 375px
+            .dropdown-content
+               display: none
+               background-color: #fff
+               position: absolute
+               top: 65px
+               left: 0
+               width: 100%
+               border: 1px solid rgba(51, 51, 51, 1)
+               border-radius: 6px
+               &.show
+                  display: block
+               .service-container
+                  display: flex
+                  align-items: center
+                  justify-content: space-evenly
+                  width: 100%
+                  height: 60px
+                  line-height: 60px
+                  padding: 0 10px
+                  cursor: pointer
+                  text-decoration: none
+                  // color: rgba(19, 39, 67, 0.5)
+                  &:hover
+                     background-color: #f4f4f4
+                  i
+                     font-size: 20px
+                     margin-right: 10px
+                     &.check-icon
+                        visibility: hidden
+                  p
+                     width: 80%
+                     font-size: 16px
+                  p::first-letter
+                     text-transform: uppercase
+
+               .service-container.selected-service
+                  color: $primary-color
+                  font-weight: 600
+                  i.check-icon
+                     visibility: visible
+         .form-submit
+            width: 100%
+            height: 50px
+            display: flex
+            align-items: center
+            justify-content: space-between
+            #submit-btn
+               display: block
+               width: 160px
+               height: 50px
+               background: $primary-color
+               border: 1.5px solid $primary-color
+               text-decoration: none
+               color: #fff
+               text-align: center
+               font-size: 14px
+               line-height: 50px
+               border-radius: 6px
+               text-transform: uppercase
+               &:disabled
+                  background-color: #4f4f4f !important
+                  border: 1.5px solid #4f4f4f
+            p.message
+               text-align: justify
+               padding-top: 5px
+               color: green
+               width: 65%
+               height: 50px
+               &.hide
+                  visibility: hidden
