@@ -10,3 +10,18 @@ document.getElementById("hamburger-button").addEventListener("click", () => {
     document.body.style.position = "fixed";
   }
 });
+
+function changeSlide() {
+  const slides = [...document.querySelectorAll("#slider>input")];
+  for (let i = 0; i < slides.length; i++) {
+    if (slides[i].checked) {
+      const indexToChange = (i + 1) % slides.length;
+
+      slides[i].checked = false;
+      slides[indexToChange].checked = true;
+      break;
+    }
+  }
+}
+
+setInterval(changeSlide, 3000);
