@@ -55,12 +55,19 @@
             .form-box
                #first-name, #last-name
                   width: 45%
+            .input-placeholder.name#last-name-label
+               left: 57%
+            input#last-name+p.textError
+               left: 56.5%
             .dropdown
-               .dropbtn
-                  i
-                     display: inline-block
-                     width: 14px
-                     padding-left: 70%
+               i.fa-angle-down
+                  left: 90%
+            .form-submit
+               height: 70px
+               p.message
+                  padding-left: 30px
+                  height: 50px
+                  padding-top: 0
 
 @media (max-width: 1224px)
    .container
@@ -81,12 +88,13 @@
       div.section-content
          .contact-info
          .contact-form
-            
+
             .form-box
                #first-name, #last-name
-                  
+            .input-placeholder.name#last-name-label
+               left: 57%
+            input#last-name+p.textError
+               left: 56.5%
             .dropdown
-               .dropbtn
-                  i
-                    
-                     padding-left: 65%
+               i.fa-angle-down
+                  left: 90%
