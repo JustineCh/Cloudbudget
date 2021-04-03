@@ -7,6 +7,11 @@ const phoneLabel = document.getElementById("phone-label");
 const inputs = document.querySelectorAll(".contact-form input");
 const serviceLabel = document.getElementById("service-label");
 const submitBtn = document.getElementById("submit-btn");
+const hamburgerBtn = document.getElementById("hamburger-button");
+const hamburgerIcon = document.getElementById("hamburger-icon");
+const mobileMenuBackground = document.getElementById("mobile-navbar-bgc");
+const mobileMenu = document.getElementById("mobile-navbar");
+const showcaseContent = document.querySelector(".showcase-content");
 
 function dropdownToggle() {
   dropdown.classList.toggle("show");
@@ -117,12 +122,20 @@ const submitForm = function () {
   }, 3000);
 };
 
-document.getElementById("hamburger-button").addEventListener("click", () => {
-  document.getElementById("hamburger-icon").classList.toggle("fa-times");
-  document.getElementById("hamburger-icon").classList.toggle("fa-bars");
-  document.getElementById("mobile-navbar-bgc").classList.toggle("open");
-  document.getElementById("mobile-navbar").classList.toggle("open");
-  document.querySelector(".showcase-content").classList.toggle("open");
+hamburgerBtn.addEventListener("click", () => {
+  hamburgerIcon.classList.toggle("fa-times");
+  hamburgerIcon.classList.toggle("fa-bars");
+  mobileMenuBackground.classList.toggle("open");
+  document.body.addEventListener("click", e => {
+    if (e.target !== hamburgerIcon) {
+      console.log("nie hamburger");
+      mobileMenuBackground.classList.remove("open");
+      mobileMenu.classList.remove("open");
+      showcaseContent.classList.remove("open");
+    }
+  });
+  mobileMenu.classList.toggle("open");
+  showcaseContent.classList.toggle("open");
   if (document.body.style.position === "fixed") {
     document.body.style.position = "static";
   } else {
@@ -138,10 +151,10 @@ serviceLinks.forEach(item => {
 });
 
 inputs.forEach(input => {
-  input.addEventListener("keyup", notBlankValidator);
+  ["keyup", "blur"].forEach(eventName => {
+    input.addEventListener(eventName, notBlankValidator);
+  });
 });
-inputs.forEach(input => {
-  input.addEventListener("blur", notBlankValidator);
-});
+
 document.getElementById("phone").addEventListener("keyup", phoneValidator);
 submitBtn.addEventListener("click", submitForm);

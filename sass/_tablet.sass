@@ -37,11 +37,23 @@
                   width: 100%
                #first-name
                   margin-bottom: 25px
+            .input-placeholder.name#last-name-label
+               position: absolute
+               left: 10px
+               top: 51%
+            p.textError
+               top: 42%
+            input#last-name+p.textError
+               left: 10px
+               top: 96%
+            input#phone+p.textError
+               top: 48%
 
 @media (max-width: 1080px)
    .container
       #showcase
          height: 90vh
+         min-height: 900px
          nav.navbar
             div.logo
                margin-left: 7%
