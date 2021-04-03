@@ -132,6 +132,9 @@ hamburgerBtn.addEventListener("click", () => {
       mobileMenuBackground.classList.remove("open");
       mobileMenu.classList.remove("open");
       showcaseContent.classList.remove("open");
+      hamburgerIcon.classList.remove("fa-times");
+      hamburgerIcon.classList.add("fa-bars");
+      document.body.style.position = "static";
     }
   });
   mobileMenu.classList.toggle("open");
