@@ -4,13 +4,19 @@ const serviceLinks = document.querySelectorAll(".service-container");
 const firstNameLabel = document.getElementById("first-name-label");
 const lastNameLabel = document.getElementById("last-name-label");
 const phoneLabel = document.getElementById("phone-label");
-const inputs = document.querySelectorAll("input");
+const inputs = document.querySelectorAll(".contact-form input");
 const serviceLabel = document.getElementById("service-label");
 const submitBtn = document.getElementById("submit-btn");
 
 function dropdownToggle() {
   dropdown.classList.toggle("show");
 }
+
+const closeDropdown = function (e) {
+  if (e.target !== serviceDropdown) {
+    dropdown.classList.remove("show");
+  }
+};
 
 const showElement = function (el) {
   el.classList.remove("hide");
@@ -25,10 +31,8 @@ const maybeEnableOrDisableSubmitBtn = function () {
     document.querySelector("input.error") ||
     document.querySelector("input.untouched")
   ) {
-    console.log("disabled");
     submitBtn.disabled = true;
   } else {
-    console.log("enabled");
     submitBtn.disabled = false;
   }
 };
@@ -57,18 +61,11 @@ const phoneValidator = function (e) {
   const typedInChars = new Set(e.target.value);
   for (let char of typedInChars) {
     if (!allowedChars.has(char)) {
-      console.log(e.target);
       e.target.classList.add("error");
       showElement(textError);
     }
   }
   maybeEnableOrDisableSubmitBtn();
-};
-
-const closeDropdown = function (e) {
-  if (e.target !== serviceDropdown) {
-    dropdown.classList.remove("show");
-  }
 };
 
 const servicePicked = function (e) {
@@ -80,6 +77,14 @@ const servicePicked = function (e) {
   e.currentTarget.classList.add("selected-service");
   dropdown.classList.remove("show");
   showElement(serviceLabel);
+};
+
+const clearPickedService = function () {
+  serviceLinks.forEach(link => {
+    link.classList.remove("selected-service");
+  });
+  serviceDropdown.innerText = "Select Service";
+  hideElement(serviceLabel);
 };
 
 function changeSlide() {
@@ -98,13 +103,14 @@ function changeSlide() {
 setInterval(changeSlide, 3000);
 
 const submitForm = function () {
-  console.log("submitted");
   const message = document.querySelector(".message");
   showElement(message);
   inputs.forEach(input => {
     input.value = "";
     input.classList.add("untouched");
+    hideElement(input.previousElementSibling);
   });
+  clearPickedService();
   maybeEnableOrDisableSubmitBtn();
   setTimeout(() => {
     hideElement(message);
