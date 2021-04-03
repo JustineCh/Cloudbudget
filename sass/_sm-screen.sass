@@ -1,3 +1,38 @@
+@media (min-width: 1200px)
+   .container
+      #showcase
+         nav.navbar
+            ul#desktop-menu
+               li
+                  a:hover
+                     font-weight: 700
+         div.showcase-content
+            a
+               transition: .3s linear
+            a:hover
+               background-color: transparent
+               border: 1px solid #fff
+               color: #fff
+   section.section
+      .section-content
+         div
+            &.content-box
+               div.info-box
+                  a
+                     transition: .3s linear
+                  a:hover
+                     font-weight: 700
+                     font-size: 14px
+   section.section#contact
+      div.section-content
+         .contact-form
+            .form-submit
+               #submit-btn
+                  transition: .3s linear
+                  &:hover
+                     background: transparent
+                     color: $primary-color
+
 @media (max-width: 1404px)
    section.section
       height: 100% !important
@@ -8,6 +43,10 @@
          align-items: flex-start
          height: 100%
          width: 80%
+
+   section.section#technology
+      .section-content
+         max-width: 850px
 
    section.section#app-download
       height: 100%
